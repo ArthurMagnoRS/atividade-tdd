@@ -21,6 +21,9 @@ def test_bug_1_subtotal_multiplica_preco_por_quantidade(pedido_pequeno):
     # 1 café (6.0) + 2 pães de queijo (4.5 cada) = 15.0
     assert pedido_pequeno.subtotal() == 15.0
 
+def test_bug_2_frete_gratis_com_subtotal_exatamente_50():
+    pedido = Pedido("Carla", [Item("Combo", 50.0, 1)])
+    assert pedido.tem_frete_gratis() is True
 
 # =============================================================
 # PARTE 2 — Implemente com TDD
