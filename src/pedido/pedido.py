@@ -29,4 +29,9 @@ class Pedido:
         return min(self.itens, key=lambda item: item.preco)
 
     def total_com_desconto(self, percentual: float) -> float:
-        return self.subtotal() - self.subtotal() * percentual / 100
+        return self.subtotal() - self.subtotal() * percentual / 100\
+    
+    
+    
+def contar_frete_gratis(pedidos: list) -> int:
+    return sum(1 for pedido in pedidos if pedido.tem_frete_gratis())
