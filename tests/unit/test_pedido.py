@@ -25,6 +25,9 @@ def test_bug_2_frete_gratis_com_subtotal_exatamente_50():
     pedido = Pedido("Carla", [Item("Combo", 50.0, 1)])
     assert pedido.tem_frete_gratis() is True
 
+def test_bug_3_item_mais_barato_retorna_menor_preco(pedido_pequeno):
+    assert pedido_pequeno.item_mais_barato() == Item("Pão de queijo", 4.5, 2)
+
 # =============================================================
 # PARTE 2 — Implemente com TDD
 # Siga o ciclo: 🔴 escreva o teste → 🟢 implemente → 🟡 refatore
