@@ -17,7 +17,9 @@ def test_exemplo_quantidade_total(pedido_pequeno):
 # Escreva um teste para cada bug. Cada teste deve FALHAR
 # no código original. Não altere src/pedido/pedido.py ainda.
 # =============================================================
-
+def test_bug_1_subtotal_multiplica_preco_por_quantidade(pedido_pequeno):
+    # 1 café (6.0) + 2 pães de queijo (4.5 cada) = 15.0
+    assert pedido_pequeno.subtotal() == 15.0
 
 
 # =============================================================
